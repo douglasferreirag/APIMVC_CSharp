@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Projeto.Context;
+using Projeto.Models;
 
 namespace Projeto.Controllers
 {
@@ -32,6 +33,24 @@ namespace Projeto.Controllers
                             return View();
 
              }
+
+            [HttpPost]
+             public IActionResult Criar(Contato contato){
+
+                    if(ModelState.IsValid){
+
+                        _context.Contatos.Add(contato);
+
+                        _context.SaveChanges();
+
+                        return RedirectToAction(nameof(Index));
+
+
+                     }
+
+                    return View(contato);
+
+            }
 
 
 

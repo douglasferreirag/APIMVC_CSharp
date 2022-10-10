@@ -40,8 +40,11 @@
 
                   </th>
 
-              </tr>
+                  <th></th>
 
+            </tr>
+
+            
 
         </thead>
 
@@ -54,14 +57,25 @@
 
                           <td>
 
-                                @Html.DisplayFor(model  => item.Id);
+                                @Html.DisplayFor(model  => item.Id)
 
-                                @Html.DisplayFor(model  => item.Nome);
+                         <td>
 
-                                @Html.DisplayFor(model  => item.Telefone);
+                                 @Html.DisplayFor(model  => item.Nome)   
 
-                                @Html.DisplayFor(model  => item.Ativo);
+                         </td>
 
+                         <td>
+
+                                @Html.DisplayFor(model  => item.Telefone)
+
+                         </td>
+
+                         <td>
+
+                               @Html.DisplayFor(model  => item.Ativo)
+
+                        </td>
 
                           </td>
 
