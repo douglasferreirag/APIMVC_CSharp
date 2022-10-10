@@ -35,7 +35,7 @@ namespace Projeto.Controllers
              }
 
             [HttpPost]
-             public IActionResult Criar(Contato contato){
+            public IActionResult Criar(Contato contato){
 
                     if(ModelState.IsValid){
 
@@ -51,6 +51,19 @@ namespace Projeto.Controllers
                     return View(contato);
 
             }
+
+            public IActionResult Editar (int id){
+
+                    var contato = _context.Contatos.Find(id);
+
+                    if(contato == null)
+
+                        return RedirectToAction(nameof (Index));
+
+                    return View(contato);
+
+
+             }
 
 
 
